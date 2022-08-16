@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapphomeclone/widgets/top_nav_bar.dart';
+import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

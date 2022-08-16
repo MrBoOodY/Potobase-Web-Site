@@ -1,8 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:whatsapphomeclone/view/download_page.dart';
-import 'package:whatsapphomeclone/view/help_center_page.dart';
-import 'package:whatsapphomeclone/view/home_page.dart';
-import 'package:whatsapphomeclone/view/security_page.dart';
+import 'package:potobase_web_site/view/download_page.dart';
+import 'package:potobase_web_site/view/help_center_page.dart';
+import 'package:potobase_web_site/view/home_page.dart';
 
 class Routes {
   static const home = '/';
@@ -13,7 +12,6 @@ class Routes {
   static final routes = <String, WidgetBuilder>{
     home: (BuildContext context) => const HomePage(),
     download: (BuildContext context) => const DownloadPage(),
-    security: (BuildContext context) => const SecurityPage(),
     helpCenter: (BuildContext context) => const HelpCenterPage(),
   };
 }

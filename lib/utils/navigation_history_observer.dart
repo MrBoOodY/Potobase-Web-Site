@@ -1,4 +1,4 @@
-library navigationhistoryobserver;
+library navigation_history_observer;
 
 // 🎯 Dart imports:
 import 'dart:async';

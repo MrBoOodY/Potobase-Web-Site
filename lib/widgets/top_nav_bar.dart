@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapphomeclone/utils/navigationHistoryObserver.dart';
-import 'package:whatsapphomeclone/utils/routes.dart';
+import 'package:potobase_web_site/utils/navigation_history_observer.dart';
+import 'package:potobase_web_site/utils/routes.dart';
 
 class TopNavBar extends StatefulWidget {
   const TopNavBar({
