@@ -90,19 +90,6 @@ class _TopNavBarState extends State<TopNavBar> {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: () {
-                  navigate(Routes.security);
-                },
-                child: const Text(
-                  'Security',
-                  style: TopNavBar._textStyle,
-                ),
-              ),
-            ),
-            const SizedBox(width: 50.0),
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
                   navigate(Routes.helpCenter);
                 },
                 child: const Text(
