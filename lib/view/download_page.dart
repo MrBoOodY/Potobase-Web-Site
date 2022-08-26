@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
+import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
@@ -27,7 +28,7 @@ class _DownloadPageState extends State<DownloadPage> {
                   child: Row(
                     children: const [
                       CustomDownloadColumn(
-                        color: Color(0xffE7F0E4),
+                        color: AppColors.androidBackgroundColor,
                         title: 'Android',
                         image: AppAssets.android,
                         downloadLink:
@@ -36,7 +37,7 @@ class _DownloadPageState extends State<DownloadPage> {
                       ),
                       SizedBox(width: 25.0),
                       CustomDownloadColumn(
-                        color: Color(0xffFCF2C6),
+                        color: AppColors.iosBackgroundColor,
                         title: 'IOS',
                         image: AppAssets.ios,
                         downloadLink: 'https://apps.apple.com/app/1629603289',

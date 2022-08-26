@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:potobase_web_site/view/about_us_page.dart';
 import 'package:potobase_web_site/view/contact_us_page.dart';
 import 'package:potobase_web_site/view/download_page.dart';
-import 'package:potobase_web_site/view/help_center_page.dart';
+import 'package:potobase_web_site/view/help_center/help_center_page.dart';
 import 'package:potobase_web_site/view/home_page.dart';
 
 class Routes {

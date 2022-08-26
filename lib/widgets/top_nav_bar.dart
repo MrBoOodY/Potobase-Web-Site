@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
+import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/constants/app_strings.dart';
 import 'package:potobase_web_site/utils/navigation_history_observer.dart';
 import 'package:potobase_web_site/utils/routes.dart';
@@ -42,7 +43,7 @@ class _TopNavBarState extends State<TopNavBar> {
     return SizedBox(
       height: 80,
       child: DecoratedBox(
-        decoration: const BoxDecoration(color: Color(0xff128c7e)),
+        decoration: const BoxDecoration(color: AppColors.navBarColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -76,25 +77,25 @@ class _TopNavBarState extends State<TopNavBar> {
                 onTap: () {
                   navigate(Routes.download);
                 },
-                title: 'Download'),
+                title: 'DOWNLOAD'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
                   navigate(Routes.aboutUs);
                 },
-                title: 'About Us'),
+                title: 'ABOUT'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
                   navigate(Routes.contactUs);
                 },
-                title: 'Contact Us'),
+                title: 'CONTACT US'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
                   navigate(Routes.helpCenter);
                 },
-                title: 'Help Center'),
+                title: 'HELP CENTER'),
 
             /*   const SizedBox(width: 50.0),
             const Icon(

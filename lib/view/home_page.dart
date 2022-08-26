@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
+import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: DecoratedBox(
                         decoration:
-                            const BoxDecoration(color: Color(0xffD8E8EA)),
+                            const BoxDecoration(color: AppColors.homeCardColor),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 50.0),
                           child: Column(children: [
@@ -110,8 +111,8 @@ class _HomePageState extends State<HomePage> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: DecoratedBox(
-                          decoration:
-                              const BoxDecoration(color: Color(0xffE7F0E4)),
+                          decoration: const BoxDecoration(
+                              color: AppColors.androidBackgroundColor),
                           child: Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 50.0),
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(height: 75.0),
                               CircleAvatar(
                                 radius: 175,
-                                backgroundColor: Color(0xff77d7c8),
+                                backgroundColor: AppColors.circleAvatarColor,
                               ),
                               Text(
                                 'END-TO-END ENCRYPTION',
