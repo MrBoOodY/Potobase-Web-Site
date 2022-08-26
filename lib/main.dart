@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potobase_web_site/constants/app_strings.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:potobase_web_site/utils/navigation_history_observer.dart';
 import 'package:potobase_web_site/utils/routes.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Potobase',
+      title: AppStrings.title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
