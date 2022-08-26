@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 120.0),
                 Image.asset(
-                  'assets/home_1.png',
+                  AppAssets.home1,
                   width: MediaQuery.of(context).size.width * 0.15,
                 )
               ],
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             const SizedBox(height: 50.0),
                             Image.asset(
-                              'assets/home_2.png',
+                              AppAssets.home2,
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.width * 0.2,
                             ),

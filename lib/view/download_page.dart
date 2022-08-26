@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
@@ -28,18 +29,18 @@ class _DownloadPageState extends State<DownloadPage> {
                       CustomDownloadColumn(
                         color: Color(0xffE7F0E4),
                         title: 'Android',
-                        image: 'assets/android.png',
+                        image: AppAssets.android,
                         downloadLink:
                             'https://play.google.com/store/apps/details?id=com.oyary.oyary&hl=en&gl=US',
-                        downloadLogo: 'assets/android_download.png',
+                        downloadLogo: AppAssets.androidDownload,
                       ),
                       SizedBox(width: 25.0),
                       CustomDownloadColumn(
                         color: Color(0xffFCF2C6),
                         title: 'IOS',
-                        image: 'assets/ios.png',
+                        image: AppAssets.ios,
                         downloadLink: 'https://apps.apple.com/app/1629603289',
-                        downloadLogo: 'assets/apple_download.png',
+                        downloadLogo: AppAssets.appleDownload,
                       ),
                     ],
                   ),
