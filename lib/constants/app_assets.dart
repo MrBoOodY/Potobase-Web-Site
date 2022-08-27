@@ -1,10 +1,12 @@
 class AppAssets {
   static const String aboutUsBanner = 'assets/about_us.jpeg';
+  static const String contactUsBanner = 'assets/contact_us.jpeg';
   static const String helpCenterBanner = 'assets/help_center.jpeg';
   static const String helpCenterBackground =
       'assets/help_center_background.jpeg';
   static const String potobase = 'assets/potobase.png';
 
+  static const String home3 = 'assets/home_3.jpeg';
   static const String home2 = 'assets/home_2.png';
 
   static const String home1 = 'assets/home_1.png';

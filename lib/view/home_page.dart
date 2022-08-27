@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.symmetric(horizontal: 50.0),
                           child: Column(children: [
                             const Text(
-                              'Whatsapp Business App',
+                              'Potobase App',
                               style: TextStyle(
                                 fontWeight: FontWeight.w900,
                                 fontSize: 34,
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             const SizedBox(height: 25.0),
                             const Text(
-                              'WhatsApp Business is a free to download app that was built with the small business owner in mind. Create a catalog to showcase your products and services. Connect with your customers easily by using tools to automate, sort and quickly respond to messages.',
+                              'Potobase App is a free to download app that was built with the small business owner in mind. Create your products and services. Connect with your customers easily by using tools to automate, sort and quickly respond to messages.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             const SizedBox(height: 25.0),
                             const Text(
-                              'WhatsApp can also help medium and large businesses provide customer support and deliver important notifications to customers. Learn more about WhatsApp Business API.',
+                              'Potobase can also help medium and large Stores provide customer support and deliver Products to customers.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
@@ -116,37 +116,40 @@ class _HomePageState extends State<HomePage> {
                           child: Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 50.0),
-                            child: Column(children: const [
-                              SizedBox(height: 75.0),
-                              CircleAvatar(
-                                radius: 175,
-                                backgroundColor: AppColors.circleAvatarColor,
-                              ),
-                              Text(
-                                'END-TO-END ENCRYPTION',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                  color: Colors.grey,
-                                  height: 5,
-                                ),
-                              ),
-                              Text(
-                                'Security by Default',
+                            child: Column(children: [
+                              const Text(
+                                'Potobase App',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w900,
                                   fontSize: 34,
+                                  height: 4,
                                 ),
                               ),
-                              SizedBox(height: 25.0),
-                              Text(
-                                'Some of your most personal moments are shared on WhatsApp, which is why we built end-to-end encryption into the latest versions of our app. When end-to-end encrypted, your messages and calls are secured so only you and the person you\'re communicating with can read or listen to them, and nobody in between, not even WhatsApp.',
+                              const SizedBox(height: 25.0),
+                              const Text(
+                                'Potobase is an online buying and selling platform, meeting and instant discussion between buyers, sellers and friends. Potobase allows you to be informed in real time of offers and requests from advertisers.',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 18,
                                   height: 1.5,
                                 ),
+                              ),
+                              const SizedBox(height: 25.0),
+                              const Text(
+                                'On Potobase you can create an advertisement for your products and upload images and video for the products',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18,
+                                  height: 1.5,
+                                ),
+                              ),
+                              const SizedBox(height: 75.0),
+                              Image.asset(
+                                AppAssets.home3,
+                                width: MediaQuery.of(context).size.width * 0.2,
+                                height: MediaQuery.of(context).size.width * 0.2,
                               ),
                             ]),
                           ),
