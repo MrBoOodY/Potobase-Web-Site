@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/constants/app_strings.dart';
-import 'package:potobase_web_site/utils/navigation_history_observer.dart';
 import 'package:potobase_web_site/utils/routes.dart';
+import 'package:potobase_web_site/utils/utils.dart';
 import 'package:potobase_web_site/widgets/nav_bar_button.dart';
 
 class TopNavBar extends StatefulWidget {
@@ -16,30 +16,100 @@ class TopNavBar extends StatefulWidget {
 }
 
 class _TopNavBarState extends State<TopNavBar> {
-  final NavigationHistoryObserver nav = NavigationHistoryObserver();
-  navigate(String route) {
-    if (nav.top?.settings.name != null) {
-      if (nav.top!.settings.name == route) {
-        return;
-      } else {
-        if (nav.top!.settings.name == Routes.home) {
-          if (Routes.home == route) {
-            return;
-          }
-          Navigator.pushNamed(context, route);
-        } else {
-          if (Routes.home == route) {
-            Navigator.pop(context);
-            return;
-          }
-          Navigator.pushReplacementNamed(context, route);
-        }
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    if (MediaQuery.of(context).size.width < 720) {
+      return DecoratedBox(
+        decoration: const BoxDecoration(color: AppColors.navBarColor),
+        child: SafeArea(
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    AppAssets.potobase,
+                    width: 60,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.clear,
+                        color: Colors.white,
+                      )),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                children: [
+                  ListTile(
+                    title: NavBarButton(
+                        onTap: () {
+                          Utils.navigate(Routes.download, context);
+                        },
+                        title: 'DOWNLOAD'),
+                  ),
+                  const Divider(
+                    height: 10.0,
+                    color: Colors.white,
+                    thickness: 0.5,
+                    indent: 15,
+                    endIndent: 15,
+                  ),
+                  ListTile(
+                    title: NavBarButton(
+                        onTap: () {
+                          Utils.navigate(Routes.aboutUs, context);
+                        },
+                        title: 'ABOUT'),
+                  ),
+                  const Divider(
+                    height: 10.0,
+                    color: Colors.white,
+                    thickness: 0.5,
+                    indent: 15,
+                    endIndent: 15,
+                  ),
+                  ListTile(
+                    title: NavBarButton(
+                        onTap: () {
+                          Utils.navigate(Routes.contactUs, context);
+                        },
+                        title: 'CONTACT US'),
+                  ),
+                  const Divider(
+                    height: 10.0,
+                    color: Colors.white,
+                    thickness: 0.5,
+                    indent: 15,
+                    endIndent: 15,
+                  ),
+                  ListTile(
+                    title: NavBarButton(
+                        onTap: () {
+                          Utils.navigate(Routes.helpCenter, context);
+                        },
+                        title: 'HELP CENTER'),
+                  ),
+                  const Divider(
+                    height: 10.0,
+                    color: Colors.white,
+                    thickness: 0.5,
+                    indent: 15,
+                    endIndent: 15,
+                  ),
+                ],
+              ),
+            )
+          ]),
+        ),
+      );
+    }
     return SizedBox(
       height: 80,
       child: DecoratedBox(
@@ -51,7 +121,7 @@ class _TopNavBarState extends State<TopNavBar> {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: () {
-                  navigate(Routes.home);
+                  Utils.navigate(Routes.home, context);
                 },
                 child: Row(
                   children: [
@@ -75,33 +145,27 @@ class _TopNavBarState extends State<TopNavBar> {
             const SizedBox(width: 100.0),
             NavBarButton(
                 onTap: () {
-                  navigate(Routes.download);
+                  Utils.navigate(Routes.download, context);
                 },
                 title: 'DOWNLOAD'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
-                  navigate(Routes.aboutUs);
+                  Utils.navigate(Routes.aboutUs, context);
                 },
                 title: 'ABOUT'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
-                  navigate(Routes.contactUs);
+                  Utils.navigate(Routes.contactUs, context);
                 },
                 title: 'CONTACT US'),
             const SizedBox(width: 50.0),
             NavBarButton(
                 onTap: () {
-                  navigate(Routes.helpCenter);
+                  Utils.navigate(Routes.helpCenter, context);
                 },
                 title: 'HELP CENTER'),
-
-            /*   const SizedBox(width: 50.0),
-            const Icon(
-              Icons.language,
-              color: Colors.white,
-            ), */
           ],
         ),
       ),

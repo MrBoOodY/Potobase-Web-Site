@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:potobase_web_site/constants/app_colors.dart';
+import 'package:potobase_web_site/utils/responsive.dart';
 import 'package:potobase_web_site/view/help_center/sections/customer_focus.dart';
 import 'package:potobase_web_site/view/help_center/sections/faqs.dart';
 import 'package:potobase_web_site/view/help_center/sections/premium_screen.dart';
+import 'package:potobase_web_site/widgets/app_drawer.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
 class HelpCenterPage extends StatefulWidget {
@@ -14,21 +16,22 @@ class HelpCenterPage extends StatefulWidget {
 }
 
 class _HelpCenterPageState extends State<HelpCenterPage> {
-  List<Widget> buttonsPage = const [
-    FAQsScreen(),
-  ];
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      endDrawer: Responsive.isMobile(context) ? const TopNavBar() : null,
       body: Column(children: [
-        const TopNavBar(),
+        if (Responsive.isMobile(context)) AppDrawer(scaffoldKey: scaffoldKey),
+        if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
             child: ListView(
           children: [
             Image.asset(
               AppAssets.helpCenterBanner,
               width: double.infinity,
-              height: 400,
+              height: MediaQuery.of(context).size.width * 0.25,
               fit: BoxFit.cover,
             ),
             const CustomHelpCenterButton(

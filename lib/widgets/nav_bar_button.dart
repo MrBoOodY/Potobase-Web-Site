@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potobase_web_site/utils/responsive.dart';
 
 class NavBarButton extends StatelessWidget {
   const NavBarButton({Key? key, required this.onTap, required this.title})
@@ -17,7 +18,9 @@ class NavBarButton extends StatelessWidget {
         onTap: onTap,
         child: Text(
           title,
-          style: _textStyle,
+          style: _textStyle.copyWith(
+            fontSize: Responsive.isTablet(context) ? 16 : 18,
+          ),
         ),
       ),
     );

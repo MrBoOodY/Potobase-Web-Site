@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:potobase_web_site/constants/app_colors.dart';
+import 'package:potobase_web_site/utils/responsive.dart';
+import 'package:potobase_web_site/widgets/app_drawer.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
 class AboutUsPage extends StatefulWidget {
@@ -11,24 +13,30 @@ class AboutUsPage extends StatefulWidget {
 }
 
 class _AboutUsPageState extends State<AboutUsPage> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final double customPadding = MediaQuery.of(context).size.width * 0.35 - 285;
     return Scaffold(
+      key: scaffoldKey,
+      endDrawer: Responsive.isMobile(context) ? const TopNavBar() : null,
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: Column(children: [
-        const TopNavBar(),
+        if (Responsive.isMobile(context)) AppDrawer(scaffoldKey: scaffoldKey),
+        if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
           child: ListView(
             children: [
               Image.asset(
                 AppAssets.aboutUsBanner,
                 width: double.infinity,
-                height: 400,
+                height: MediaQuery.of(context).size.width * 0.25,
                 fit: BoxFit.cover,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.2),
+                  horizontal: customPadding > 0 ? customPadding : 0,
+                ),
                 child: DecoratedBox(
                   decoration: const BoxDecoration(color: Colors.white),
                   child: IntrinsicHeight(
