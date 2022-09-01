@@ -26,7 +26,7 @@ class CustomerFocusScreen extends StatelessWidget {
               textStyle: _textStyle,
             ),
             CustomParagraphText(
-              text: 'You can even chat with us instantly',
+              text: 'You can even chat with us instantly.',
               textStyle: _textStyle,
             ),
             SizedBox(height: 20.0),
