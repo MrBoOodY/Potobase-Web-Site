@@ -4,6 +4,7 @@ import 'package:potobase_web_site/constants/app_assets.dart';
 import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/utils/responsive.dart';
 import 'package:potobase_web_site/widgets/app_drawer.dart';
+import 'package:selectable/selectable.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
 
@@ -113,65 +114,70 @@ class CustomDownloadColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     final Uri webDownloadLink = Uri.parse('potobase.com/download');
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: color,
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05),
-        child: Column(children: [
-          const SizedBox(
-            height: 100.0,
-          ),
-          Text(
-            title,
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w400),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
-          Image.asset(
-            image,
-            width: 190,
-            height: 350,
-          ),
-          const SizedBox(height: 10.0),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-                onTap: () {
-                  launchUrl(Uri.parse(downloadLink));
-                },
-                child: Image.asset(
-                  downloadLogo,
-                  width: 200,
-                )),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                style: const TextStyle(fontSize: 24, height: 1.5),
-                children: [
-                  const TextSpan(text: 'Visit '),
-                  TextSpan(
-                    text: webDownloadLink.path,
-                    style: const TextStyle(color: Colors.blue),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        launchUrl(webDownloadLink);
-                      },
-                  ),
-                  const TextSpan(text: ' on your mobile phone to install.'),
-                ]),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
-        ]),
+    return Selectable(
+      showSelection: true,
+      selectWordOnDoubleTap: true,
+      selectWordOnLongPress: true,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05),
+          child: Column(children: [
+            const SizedBox(
+              height: 100.0,
+            ),
+            SelectableText(
+              title,
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 50.0,
+            ),
+            Image.asset(
+              image,
+              width: 190,
+              height: 350,
+            ),
+            const SizedBox(height: 10.0),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                  onTap: () {
+                    launchUrl(Uri.parse(downloadLink));
+                  },
+                  child: Image.asset(
+                    downloadLogo,
+                    width: 200,
+                  )),
+            ),
+            const SizedBox(
+              height: 50.0,
+            ),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                  style: const TextStyle(fontSize: 24, height: 1.5),
+                  children: [
+                    const TextSpan(text: 'Visit '),
+                    TextSpan(
+                      text: webDownloadLink.path,
+                      style: const TextStyle(color: Colors.blue),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          launchUrl(webDownloadLink);
+                        },
+                    ),
+                    const TextSpan(text: ' on your mobile phone to install.'),
+                  ]),
+            ),
+            const SizedBox(
+              height: 50.0,
+            ),
+          ]),
+        ),
       ),
     );
   }

@@ -92,12 +92,12 @@ class CustomHelpCenterButton extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                SelectableText(
                   title,
                   style: _textStyle,
                 ),
                 const SizedBox(height: 20.0),
-                Text(
+                SelectableText(
                   subTitle,
                   style: _textStyle.copyWith(
                       fontWeight: FontWeight.w200, fontSize: 18),
