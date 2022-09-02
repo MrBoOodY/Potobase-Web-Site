@@ -4,7 +4,6 @@ import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/utils/responsive.dart';
 import 'package:potobase_web_site/widgets/app_drawer.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
-import 'package:selectable/selectable.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -27,10 +26,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
         if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
           child: SingleChildScrollView(
-            child: Selectable(
-              showSelection: true,
-              selectWordOnDoubleTap: true,
-              selectWordOnLongPress: true,
+            child: SelectionArea(
               child: Column(
                 children: [
                   Image.asset(

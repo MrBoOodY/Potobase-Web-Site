@@ -5,7 +5,6 @@ import 'package:potobase_web_site/utils/responsive.dart';
 import 'package:potobase_web_site/utils/routes.dart';
 import 'package:potobase_web_site/widgets/app_drawer.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
-import 'package:selectable/selectable.dart';
 
 class ContactUsPage extends StatefulWidget {
   const ContactUsPage({Key? key}) : super(key: key);
@@ -28,10 +27,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
         if (Responsive.isMobile(context)) AppDrawer(scaffoldKey: scaffoldKey),
         if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
-            child: Selectable(
-          showSelection: true,
-          selectWordOnDoubleTap: true,
-          selectWordOnLongPress: true,
+            child: SelectionArea(
           child: ListView(
             children: [
               Image.asset(

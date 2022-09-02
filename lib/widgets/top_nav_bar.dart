@@ -130,7 +130,7 @@ class _TopNavBarState extends State<TopNavBar> {
                       width: 60,
                     ),
                     const SizedBox(width: 10.0),
-                    const SelectableText(
+                    const Text(
                       AppStrings.title,
                       style: TextStyle(
                         fontSize: 23,

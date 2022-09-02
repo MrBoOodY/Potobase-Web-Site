@@ -39,7 +39,7 @@ class AppDrawer extends StatelessWidget {
                           width: 50,
                         ),
                         const SizedBox(width: 10.0),
-                        const SelectableText(
+                        const Text(
                           AppStrings.title,
                           style: TextStyle(
                             fontSize: 23,

@@ -4,7 +4,6 @@ import 'package:potobase_web_site/constants/app_colors.dart';
 import 'package:potobase_web_site/utils/responsive.dart';
 import 'package:potobase_web_site/widgets/app_drawer.dart';
 import 'package:potobase_web_site/widgets/top_nav_bar.dart';
-import 'package:selectable/selectable.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  
   @override
   Widget build(BuildContext context) {
     final double customPadding = MediaQuery.of(context).size.width - 1700;
@@ -27,10 +27,7 @@ class _HomePageState extends State<HomePage> {
           AppDrawer(scaffoldKey: scaffoldKey, isHome: true),
         if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
-            child: Selectable(
-          showSelection: true,
-          selectWordOnDoubleTap: true,
-          selectWordOnLongPress: true,
+            child: SelectionArea(
           child: ListView(
             children: [
               if (!Responsive.isMobile(context)) const SizedBox(height: 50.0),
@@ -58,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                               width: 80,
                             ),
                           const SizedBox(height: 50.0),
-                          SelectableText(
+                          Text(
                             'Simple. Secure.\nReliable.',
                             style: TextStyle(
                               fontSize: 33,
@@ -71,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                                 : TextAlign.center,
                           ),
                           const SizedBox(height: 20.0),
-                          SelectableText(
+                          Text(
                             'With Potobase, enjoy fast selling, easy buying, and fast, simple, and secure communication that\'s free and available on phones anywhere in the world.',
                             style: TextStyle(
                                 fontSize: 18,
@@ -156,7 +153,7 @@ class SecondHomeColumnWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
         child: Column(children: [
-          const SelectableText(
+          const Text(
             'Potobase App',
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -165,7 +162,7 @@ class SecondHomeColumnWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 25.0),
-          const SelectableText(
+          const Text(
             'Potobase is an online buying and selling platform, meeting and instant discussion between buyers, sellers and friends. Potobase allows you to be informed in real time of offers and requests from advertisers.',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -175,7 +172,7 @@ class SecondHomeColumnWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 25.0),
-          const SelectableText(
+          const Text(
             'On Potobase you can create an advertisement for your products and upload images and video for the products',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -208,7 +205,7 @@ class FirstHomeColumnWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
         child: Column(children: [
-          const SelectableText(
+          const Text(
             'Potobase App',
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -217,7 +214,7 @@ class FirstHomeColumnWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 25.0),
-          const SelectableText(
+          const Text(
             'Potobase App is a free to download app that was built with the small business owner in mind. Create your products and services. Connect with your customers easily by using tools to automate, sort and quickly respond to messages.',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -227,7 +224,7 @@ class FirstHomeColumnWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 25.0),
-          const SelectableText(
+          const Text(
             'Potobase can also help medium and large Stores provide customer support and deliver Products to customers.',
             textAlign: TextAlign.center,
             style: TextStyle(

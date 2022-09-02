@@ -38,7 +38,7 @@ class CustomParagraphText extends StatelessWidget {
           width: 10.0,
         ),
         Expanded(
-          child: SelectableText(
+          child: Text(
             text,
             style: textStyle ??
                 TextStyle(

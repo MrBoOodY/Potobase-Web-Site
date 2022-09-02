@@ -37,11 +37,6 @@ dependencies:
   url_strategy: ^0.2.0
   built_collection: ^5.1.1
   url_launcher: ^6.1.5
-  selectable: ^0.2.4
-  better_selection:
-    git:
-      url: https://github.com/wilsonowilson/better_selection.git
-      ref: main
 
 dev_dependencies:
   flutter_test:

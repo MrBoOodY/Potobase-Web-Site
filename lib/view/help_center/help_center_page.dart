@@ -26,30 +26,32 @@ class _HelpCenterPageState extends State<HelpCenterPage> {
         if (Responsive.isMobile(context)) AppDrawer(scaffoldKey: scaffoldKey),
         if (!Responsive.isMobile(context)) const TopNavBar(),
         Expanded(
-            child: ListView(
-          children: [
-            Image.asset(
-              AppAssets.helpCenterBanner,
-              width: double.infinity,
-              height: MediaQuery.of(context).size.width * 0.25,
-              fit: BoxFit.cover,
-            ),
-            const CustomHelpCenterButton(
-              title: 'FAQs',
-              subTitle: 'Find What You Are Looking For',
-              child: FAQsScreen(),
-            ),
-            const CustomHelpCenterButton(
-              title: 'CUSTOMER FOCUS',
-              subTitle: 'Meetings and chats',
-              child: CustomerFocusScreen(),
-            ),
-            const CustomHelpCenterButton(
-              title: 'Premium',
-              subTitle: 'Find What You Are Not Understanding',
-              child: PremiumScreen(),
-            ),
-          ],
+            child: SelectionArea(
+          child: ListView(
+            children: [
+              Image.asset(
+                AppAssets.helpCenterBanner,
+                width: double.infinity,
+                height: MediaQuery.of(context).size.width * 0.25,
+                fit: BoxFit.cover,
+              ),
+              const CustomHelpCenterButton(
+                title: 'FAQs',
+                subTitle: 'Find What You Are Looking For',
+                child: FAQsScreen(),
+              ),
+              const CustomHelpCenterButton(
+                title: 'CUSTOMER FOCUS',
+                subTitle: 'Meetings and chats',
+                child: CustomerFocusScreen(),
+              ),
+              const CustomHelpCenterButton(
+                title: 'Premium',
+                subTitle: 'Find What You Are Not Understanding',
+                child: PremiumScreen(),
+              ),
+            ],
+          ),
         ))
       ]),
     );
@@ -92,12 +94,12 @@ class CustomHelpCenterButton extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SelectableText(
+                Text(
                   title,
                   style: _textStyle,
                 ),
                 const SizedBox(height: 20.0),
-                SelectableText(
+                Text(
                   subTitle,
                   style: _textStyle.copyWith(
                       fontWeight: FontWeight.w200, fontSize: 18),
